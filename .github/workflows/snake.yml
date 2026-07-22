@@ -1,4 +1,5 @@
-name: Generate Snake Animation
+name: Generate Profile Assets
+
 on:
   schedule:
     - cron: '0 0 * * *'
@@ -11,15 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - uses: Platane/snk@v3
+
+      - name: Generate Snake Animation
+        uses: Platane/snk@v3
         with:
           github_user_name: omertahirustun
           outputs: |
             dist/github-snake-dark.svg?color_snake=#00E5FF&color_dots=#4FC3F7,#009DFF,#33CCFF,#00E5FF&bg_color=#050816
             dist/github-snake-dark.gif?color_snake=#00E5FF&color_dots=#4FC3F7,#009DFF,#33CCFF,#00E5FF&bg_color=#050816
 
-      - uses: crazy-max/ghaction-github-pages@v4
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: gh-pages
           build_dir: dist

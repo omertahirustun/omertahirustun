@@ -7,38 +7,7 @@
 </div>
 
 <div align="center">
-  <pre style="font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.4; color: #EAFBFF; background: #0A0F1E; border: 1px solid #00E5FF; border-radius: 8px; padding: 20px; text-align: left; box-shadow: 0 0 15px rgba(0, 229, 255, 0.3); display: inline-block; overflow-x: auto;">
-┌───────────────────────────────────────────────────────────┐
-│  <span style="color: #00E5FF;">$</span> <span style="color: #4FC3F7;">fastfetch</span>                                            │
-├──────────────┬────────────────────────────────────────────┤
-│              │  <span style="color: #00E5FF;">OS:</span>        Arch Linux x86_64             │
-│   <span style="color: #009DFF;">ASCII</span>      │  <span style="color: #00E5FF;">Host:</span>      Custom Build                  │
-│   <span style="color: #009DFF;">(photo)</span>    │  <span style="color: #00E5FF;">Kernel:</span>    6.x.x-zen1-1-zen              │
-│              │  <span style="color: #00E5FF;">Shell:</span>     zsh 5.9                        │
-│              │  <span style="color: #00E5FF;">Editor:</span>    Neovim 0.10+                   │
-│              │  <span style="color: #00E5FF;">IDE:</span>       JetBrains Rider / VS Code       │
-│              │  <span style="color: #00E5FF;">DE:</span>        Hyprland                       │
-│              │  <span style="color: #00E5FF;">Terminal:</span>  Kitty / Alacritty              │
-│              │  <span style="color: #00E5FF;">CPU:</span>       AMD Ryzen / Intel              │
-│              │  <span style="color: #00E5FF;">Memory:</span>    Enough for Arch                │
-│              │                                            │
-│              │  <span style="color: #00E5FF;">Languages:</span>                                │
-│              │  ├─ C# <span style="color: #009DFF;">████████████████████░░</span> 85%          │
-│              │  ├─ Java <span style="color: #009DFF;">██████████████░░░░░░</span> 70%          │
-│              │  ├─ Kotlin <span style="color: #009DFF;">████████████░░░░░░░░</span> 60%          │
-│              │  ├─ C++ <span style="color: #009DFF;">██████████░░░░░░░░░░</span> 50%          │
-│              │  └─ SQL <span style="color: #009DFF;">████████░░░░░░░░░░░░</span> 40%          │
-│              │                                            │
-│              │  <span style="color: #00E5FF;">Backend:</span>   ASP.NET Core · MongoDB         │
-│              │             Redis · Kafka                  │
-│              │  <span style="color: #00E5FF;">Frontend:</span>  React Native                   │
-│              │  <span style="color: #00E5FF;">GitHub:</span>    @omertahirustun                │
-│              │  <span style="color: #00E5FF;">Uni:</span>       Istanbul Sabahattin Zaim Uni   │
-│              │  <span style="color: #00E5FF;">Major:</span>     Software Engineering           │
-│              │                                            │
-│              │  <span style="color: #4FC3F7;">> Build. Learn. Repeat.</span>                   │
-└──────────────┴────────────────────────────────────────────┘
-</pre>
+  <img src="assets/fastfetch.svg" width="100%" alt="Fastfetch Terminal"/>
 </div>
 
 <div align="center">
@@ -76,14 +45,6 @@
 
 <img width="49%" src="https://github-readme-stats.vercel.app/api?username=omertahirustun&show_icons=true&theme=radical&bg_color=050816&hide_border=true&title_color=00E5FF&icon_color=009DFF&text_color=EAFBFF&ring_color=00E5FF" alt="Stats"/>
 <img width="49%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=omertahirustun&layout=compact&theme=radical&bg_color=050816&hide_border=true&title_color=00E5FF&text_color=EAFBFF&langs_count=8" alt="Top Languages"/>
-
-</div>
-
-<div align="center">
-
-### 📈 Contribution Graph
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=omertahirustun&bg_color=050816&color=00E5FF&line=009DFF&point=4FC3F7&area=true&area_color=00E5FF&hide_border=true" alt="Activity Graph"/>
 
 </div>
 
@@ -131,10 +92,6 @@
 *"The best way to predict the future is to invent it."* — **Alan Kay**
 
 ---
-
-</div>
-
-<div align="center">
 
 ### 💭 Daily Dev Quote
 

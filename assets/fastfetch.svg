@@ -1,0 +1,366 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+  <defs>
+    <filter id="textGlow" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="barGlow" x="-5%" y="-30%" width="110%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="scanGlow" x="0%" y="-50%" width="100%" height="200%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="b1"/>
+      <feGaussianBlur stdDeviation="8" result="b2"/>
+      <feMerge><feMergeNode in="b2"/><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="frameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#112240" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0A0F1E" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#009DFF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#4FC3F7" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="titleBarGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#112240"/>
+      <stop offset="100%" stop-color="#0D1B30"/>
+    </linearGradient>
+    <linearGradient id="photoRing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="50%" stop-color="#009DFF"/>
+      <stop offset="100%" stop-color="#4FC3F7"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#009DFF"/>
+      <stop offset="50%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#4FC3F7"/>
+    </linearGradient>
+    <linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00E5FF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="photoClip"><circle cx="105" cy="135" r="72"/></clipPath>
+    <clipPath id="windowClip"><rect x="14" y="50" width="872" height="436" rx="10"/></clipPath>
+    <radialGradient id="dot1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#009DFF"/><stop offset="100%" stop-color="#009DFF" stop-opacity="0.6"/>
+    </radialGradient>
+    <radialGradient id="dot2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4FC3F7"/><stop offset="100%" stop-color="#4FC3F7" stop-opacity="0.6"/>
+    </radialGradient>
+    <radialGradient id="dot3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#00E5FF" stop-opacity="0.6"/>
+    </radialGradient>
+  </defs>
+
+  <style>
+    @keyframes terminalFadeIn {
+      0% { opacity: 0; transform: scale(0.96); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes borderPulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.85; }
+    }
+    @keyframes dotBlink1 { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+    @keyframes dotBlink2 { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+    @keyframes dotBlink3 { 0%, 100% { opacity: 0.8; } 50% { opacity: 1; } }
+    @keyframes typingCommand {
+      0% { width: 0; }
+      100% { width: 200px; }
+    }
+    @keyframes cursorBlink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    @keyframes lineReveal {
+      0% { opacity: 0; transform: translateX(-8px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes barFill {
+      0% { width: 0; }
+      100% { width: var(--w); }
+    }
+    @keyframes photoPulse {
+      0%, 100% { filter: drop-shadow(0 0 6px rgba(0,229,255,0.4)); }
+      50% { filter: drop-shadow(0 0 14px rgba(0,229,255,0.7)); }
+    }
+    @keyframes scanLine {
+      0% { transform: translateY(0); opacity: 0; }
+      5% { opacity: 1; }
+      95% { opacity: 1; }
+      100% { transform: translateY(430px); opacity: 0; }
+    }
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+    @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+    @keyframes cursorFadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes p1 { 0%{transform:translate(0,0);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translate(40px,-60px);opacity:0} }
+    @keyframes p2 { 0%{transform:translate(0,0);opacity:0}15%{opacity:.5}85%{opacity:.5}100%{transform:translate(-30px,-80px);opacity:0} }
+    @keyframes p3 { 0%{transform:translate(0,0);opacity:0}10%{opacity:.4}90%{opacity:.4}100%{transform:translate(50px,-50px);opacity:0} }
+    @keyframes p4 { 0%{transform:translate(0,0);opacity:0}20%{opacity:.5}80%{opacity:.5}100%{transform:translate(-20px,-70px);opacity:0} }
+    @keyframes p5 { 0%{transform:translate(0,0);opacity:0}12%{opacity:.6}88%{opacity:.6}100%{transform:translate(35px,-45px);opacity:0} }
+    @keyframes p6 { 0%{transform:translate(0,0);opacity:0}18%{opacity:.4}82%{opacity:.4}100%{transform:translate(-45px,-55px);opacity:0} }
+
+    .terminal-group {
+      animation: terminalFadeIn 0.8s ease-out forwards;
+      transform-origin: center center;
+    }
+    .outer-glow { animation: borderPulse 4s ease-in-out infinite; }
+    .dot1 { animation: dotBlink1 3s ease-in-out infinite; }
+    .dot2 { animation: dotBlink2 3s ease-in-out infinite 0.5s; }
+    .dot3 { animation: dotBlink3 3s ease-in-out infinite 1s; }
+
+    .command-text {
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typingCommand 1.2s steps(14, end) 1s forwards;
+      width: 0;
+    }
+    .cmd-cursor { animation: cursorBlink 0.8s step-end infinite; }
+
+    .il {
+      opacity: 0;
+      animation: lineReveal 0.4s ease-out forwards;
+    }
+
+    .sep {
+      opacity: 0;
+      animation: lineReveal 0.3s ease-out forwards;
+      animation-delay: 4.4s;
+    }
+
+    .ll {
+      opacity: 0;
+      animation: lineReveal 0.3s ease-out forwards;
+    }
+    .bb {
+      opacity: 0;
+      animation: lineReveal 0.3s ease-out forwards;
+    }
+    .bf {
+      width: 0;
+      animation: barFill 0.8s ease-out forwards;
+    }
+    .bp {
+      opacity: 0;
+      animation: lineReveal 0.3s ease-out forwards;
+    }
+
+    .tl {
+      opacity: 0;
+      animation: lineReveal 0.4s ease-out forwards;
+    }
+
+    .bottom-text {
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out forwards;
+      animation-delay: 7.5s;
+    }
+    .bottom-cursor {
+      opacity: 0;
+      animation: fadeIn 0.01s forwards 7.5s, cursorBlink 0.8s step-end infinite 7.5s;
+    }
+
+    .photo-group { animation: photoPulse 3s ease-in-out infinite; }
+    .scan-line { animation: scanLine 6s linear infinite 1.5s; }
+    .glow-rect { animation: glowPulse 4s ease-in-out infinite; }
+
+    .p1{animation:p1 8s ease-in-out infinite 2s}
+    .p2{animation:p2 10s ease-in-out infinite 3s}
+    .p3{animation:p3 7s ease-in-out infinite 1s}
+    .p4{animation:p4 9s ease-in-out infinite 4s}
+    .p5{animation:p5 11s ease-in-out infinite 2.5s}
+    .p6{animation:p6 8.5s ease-in-out infinite 3.5s}
+    .p7{animation:p1 9.5s ease-in-out infinite 5s}
+    .p8{animation:p3 7.5s ease-in-out infinite 1.5s}
+  </style>
+
+  <!-- Background -->
+  <rect width="900" height="500" rx="14" ry="14" fill="#0A0F1E"/>
+
+  <!-- Floating Particles -->
+  <circle class="p1" cx="120" cy="400" r="1.5" fill="#00E5FF" opacity="0"/>
+  <circle class="p2" cx="750" cy="350" r="1" fill="#4FC3F7" opacity="0"/>
+  <circle class="p3" cx="450" cy="450" r="1.2" fill="#009DFF" opacity="0"/>
+  <circle class="p4" cx="300" cy="380" r="0.8" fill="#00E5FF" opacity="0"/>
+  <circle class="p5" cx="650" cy="420" r="1.3" fill="#33CCFF" opacity="0"/>
+  <circle class="p6" cx="800" cy="300" r="1" fill="#009DFF" opacity="0"/>
+  <circle class="p7" cx="200" cy="320" r="0.9" fill="#4FC3F7" opacity="0"/>
+  <circle class="p8" cx="550" cy="460" r="1.1" fill="#00E5FF" opacity="0"/>
+
+  <!-- Terminal Window -->
+  <g class="terminal-group">
+
+    <!-- Outer glow -->
+    <rect class="outer-glow" x="8" y="8" width="884" height="484" rx="16" ry="16"
+          fill="none" stroke="#00E5FF" stroke-width="1" opacity="0.4"/>
+
+    <!-- Window body -->
+    <rect x="12" y="12" width="876" height="476" rx="12" ry="12"
+          fill="url(#frameGrad)" stroke="url(#borderGrad)" stroke-width="1.5"/>
+
+    <!-- Title bar -->
+    <rect x="12" y="12" width="876" height="38" rx="12" ry="12" fill="url(#titleBarGrad)"/>
+    <rect x="12" y="36" width="876" height="14" fill="url(#titleBarGrad)"/>
+
+    <!-- Window dots -->
+    <circle class="dot1" cx="34" cy="31" r="6" fill="url(#dot1)"/>
+    <circle class="dot2" cx="56" cy="31" r="6" fill="url(#dot2)"/>
+    <circle class="dot3" cx="78" cy="31" r="6" fill="url(#dot3)"/>
+
+    <!-- Title text -->
+    <text x="450" y="36" text-anchor="middle" font-family="'SF Mono','Fira Code','Cascadia Code',monospace"
+          font-size="12" fill="#4FC3F7" opacity="0.7">Terminal — fastfetch</text>
+
+    <!-- Content area (clipped to window) -->
+    <g clip-path="url(#windowClip)">
+
+      <!-- Profile photo -->
+      <g class="photo-group">
+        <circle cx="105" cy="140" r="76" fill="none" stroke="url(#photoRing)" stroke-width="2" opacity="0.7"/>
+        <circle cx="105" cy="140" r="74" fill="none" stroke="#00E5FF" stroke-width="0.5" opacity="0.3"/>
+        <image href="profile.gif" x="30" y="65" width="150" height="150" clip-path="url(#photoClip)"
+               preserveAspectRatio="xMidYMid slice"/>
+        <circle cx="105" cy="140" r="72" fill="none" stroke="#00E5FF" stroke-width="0.5" opacity="0.2"/>
+      </g>
+
+      <!-- Username below photo -->
+      <text x="105" y="235" text-anchor="middle" font-family="'SF Mono','Fira Code',monospace"
+            font-size="13" fill="#EAFBFF" font-weight="bold" filter="url(#textGlow)">@omertahirustun</text>
+      <text x="105" y="253" text-anchor="middle" font-family="'SF Mono','Fira Code',monospace"
+            font-size="10" fill="#4FC3F7" opacity="0.7">Developer · Student</text>
+
+      <!-- Vertical separator -->
+      <line x1="210" y1="56" x2="210" y2="460" stroke="#112240" stroke-width="1" opacity="0.6"/>
+
+      <!-- Typing command -->
+      <text x="230" y="72" font-family="'SF Mono','Fira Code',monospace" font-size="13"
+            fill="#00E5FF" filter="url(#textGlow)">$</text>
+      <clipPath id="cmdClip"><rect x="247" y="57" width="200" height="20"/></clipPath>
+      <text class="command-text" x="247" y="72" font-family="'SF Mono','Fira Code',monospace"
+            font-size="13" fill="#EAFBFF" clip-path="url(#cmdClip)"> fastfetch</text>
+      <rect class="cmd-cursor" x="370" y="58" width="8" height="16" rx="1" fill="#00E5FF"/>
+
+      <!-- System Info Lines -->
+      <g font-family="'SF Mono','Fira Code',monospace" font-size="12">
+        <g class="il" style="animation-delay:2.4s">
+          <text x="230" y="105" fill="#009DFF" font-weight="bold">OS</text>
+          <text x="310" y="105" fill="#EAFBFF">Arch Linux x86_64</text>
+        </g>
+        <g class="il" style="animation-delay:2.65s">
+          <text x="230" y="125" fill="#009DFF" font-weight="bold">Kernel</text>
+          <text x="310" y="125" fill="#EAFBFF">6.x.x-zen1-1-zen</text>
+        </g>
+        <g class="il" style="animation-delay:2.9s">
+          <text x="230" y="145" fill="#009DFF" font-weight="bold">Shell</text>
+          <text x="310" y="145" fill="#EAFBFF">zsh 5.9</text>
+        </g>
+        <g class="il" style="animation-delay:3.15s">
+          <text x="230" y="165" fill="#009DFF" font-weight="bold">Editor</text>
+          <text x="310" y="165" fill="#EAFBFF">Neovim 0.10+</text>
+        </g>
+        <g class="il" style="animation-delay:3.4s">
+          <text x="230" y="185" fill="#009DFF" font-weight="bold">IDE</text>
+          <text x="310" y="185" fill="#EAFBFF">JetBrains Rider / VS Code</text>
+        </g>
+        <g class="il" style="animation-delay:3.65s">
+          <text x="230" y="205" fill="#009DFF" font-weight="bold">DE</text>
+          <text x="310" y="205" fill="#EAFBFF">Hyprland</text>
+        </g>
+        <g class="il" style="animation-delay:3.9s">
+          <text x="230" y="225" fill="#009DFF" font-weight="bold">Terminal</text>
+          <text x="310" y="225" fill="#EAFBFF">Kitty / Alacritty</text>
+        </g>
+        <g class="il" style="animation-delay:4.15s">
+          <text x="230" y="245" fill="#009DFF" font-weight="bold">CPU</text>
+          <text x="310" y="245" fill="#EAFBFF">AMD Ryzen / Intel</text>
+        </g>
+        <g class="il" style="animation-delay:4.4s">
+          <text x="230" y="265" fill="#009DFF" font-weight="bold">Memory</text>
+          <text x="310" y="265" fill="#EAFBFF">Enough for Arch</text>
+        </g>
+      </g>
+
+      <!-- Separator -->
+      <line class="sep" x1="230" y1="283" x2="850" y2="283" stroke="#112240" stroke-width="1"/>
+
+      <!-- Language Progress Bars -->
+      <g font-family="'SF Mono','Fira Code',monospace" font-size="11">
+        <!-- C# -->
+        <g class="ll" style="animation-delay:4.6s"><text x="230" y="304" fill="#EAFBFF">C#</text></g>
+        <g class="bb" style="animation-delay:4.6s"><rect x="310" y="294" width="160" height="10" rx="5" fill="#112240"/></g>
+        <g class="bf" style="animation-delay:4.85s;--w:136px" filter="url(#barGlow)"><rect x="310" y="294" width="136" height="10" rx="5" fill="url(#barGrad)"/></g>
+        <g class="bp" style="animation-delay:4.85s"><text x="478" y="304" fill="#00E5FF" font-size="10">85%</text></g>
+        <!-- Java -->
+        <g class="ll" style="animation-delay:4.85s"><text x="230" y="326" fill="#EAFBFF">Java</text></g>
+        <g class="bb" style="animation-delay:4.85s"><rect x="310" y="316" width="160" height="10" rx="5" fill="#112240"/></g>
+        <g class="bf" style="animation-delay:5.1s;--w:112px" filter="url(#barGlow)"><rect x="310" y="316" width="112" height="10" rx="5" fill="url(#barGrad)"/></g>
+        <g class="bp" style="animation-delay:5.1s"><text x="478" y="326" fill="#00E5FF" font-size="10">70%</text></g>
+        <!-- Kotlin -->
+        <g class="ll" style="animation-delay:5.1s"><text x="230" y="348" fill="#EAFBFF">Kotlin</text></g>
+        <g class="bb" style="animation-delay:5.1s"><rect x="310" y="338" width="160" height="10" rx="5" fill="#112240"/></g>
+        <g class="bf" style="animation-delay:5.35s;--w:96px" filter="url(#barGlow)"><rect x="310" y="338" width="96" height="10" rx="5" fill="url(#barGrad)"/></g>
+        <g class="bp" style="animation-delay:5.35s"><text x="478" y="348" fill="#00E5FF" font-size="10">60%</text></g>
+        <!-- C++ -->
+        <g class="ll" style="animation-delay:5.35s"><text x="230" y="370" fill="#EAFBFF">C++</text></g>
+        <g class="bb" style="animation-delay:5.35s"><rect x="310" y="360" width="160" height="10" rx="5" fill="#112240"/></g>
+        <g class="bf" style="animation-delay:5.6s;--w:80px" filter="url(#barGlow)"><rect x="310" y="360" width="80" height="10" rx="5" fill="url(#barGrad)"/></g>
+        <g class="bp" style="animation-delay:5.6s"><text x="478" y="370" fill="#00E5FF" font-size="10">50%</text></g>
+        <!-- SQL -->
+        <g class="ll" style="animation-delay:5.6s"><text x="230" y="392" fill="#EAFBFF">SQL</text></g>
+        <g class="bb" style="animation-delay:5.6s"><rect x="310" y="382" width="160" height="10" rx="5" fill="#112240"/></g>
+        <g class="bf" style="animation-delay:5.85s;--w:64px" filter="url(#barGlow)"><rect x="310" y="382" width="64" height="10" rx="5" fill="url(#barGrad)"/></g>
+        <g class="bp" style="animation-delay:5.85s"><text x="478" y="392" fill="#00E5FF" font-size="10">40%</text></g>
+      </g>
+
+      <!-- Tech Stack Lines -->
+      <g font-family="'SF Mono','Fira Code',monospace" font-size="12">
+        <g class="tl" style="animation-delay:6.2s">
+          <text x="230" y="418" fill="#009DFF" font-weight="bold">Backend</text>
+          <text x="310" y="418" fill="#EAFBFF">ASP.NET Core · MongoDB · Redis · Kafka</text>
+        </g>
+        <g class="tl" style="animation-delay:6.45s">
+          <text x="230" y="438" fill="#009DFF" font-weight="bold">Frontend</text>
+          <text x="310" y="438" fill="#EAFBFF">React Native</text>
+        </g>
+        <g class="tl" style="animation-delay:6.7s">
+          <text x="230" y="458" fill="#009DFF" font-weight="bold">GitHub</text>
+          <text x="310" y="458" fill="#EAFBFF">@omertahirustun</text>
+        </g>
+        <g class="tl" style="animation-delay:6.95s">
+          <text x="230" y="478" fill="#009DFF" font-weight="bold">Uni</text>
+          <text x="310" y="478" fill="#EAFBFF">Istanbul Sabahattin Zaim Univ.</text>
+        </g>
+        <g class="tl" style="animation-delay:7.2s">
+          <text x="230" y="498" fill="#009DFF" font-weight="bold">Major</text>
+          <text x="310" y="498" fill="#EAFBFF">Software Engineering</text>
+        </g>
+      </g>
+
+      <!-- HUD Scan Line -->
+      <g class="scan-line" filter="url(#scanGlow)">
+        <line x1="15" y1="0" x2="885" y2="0" stroke="#00E5FF" stroke-width="0.8" opacity="0.15"/>
+        <rect x="15" y="-15" width="870" height="30" fill="url(#scanGrad)" opacity="0.06"/>
+      </g>
+
+    </g><!-- /windowClip -->
+  </g><!-- /terminal-group -->
+
+  <!-- Bottom Motto -->
+  <text class="bottom-text" x="450" y="492" text-anchor="middle"
+        font-family="'SF Mono','Fira Code',monospace" font-size="12"
+        fill="#4FC3F7" filter="url(#textGlow)">&gt; Build. Learn. Repeat.</text>
+  <rect class="bottom-cursor" x="543" y="482" width="7" height="14" rx="1" fill="#00E5FF"/>
+</svg>
