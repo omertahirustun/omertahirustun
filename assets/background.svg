@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <!-- Radial gradient from center -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#0A0F1E" />
+      <stop offset="100%" stop-color="#050816" />
+    </radialGradient>
+
+    <!-- Subtle grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#112240" stroke-width="0.4" opacity="0.3"/>
+    </pattern>
+
+    <!-- Circuit trace pattern (200x200 tile) -->
+    <pattern id="circuits" width="200" height="200" patternUnits="userSpaceOnUse">
+      <!-- Horizontal traces -->
+      <line x1="20" y1="40" x2="80" y2="40" stroke="#0D1B2A" stroke-width="0.6" opacity="0.5"/>
+      <line x1="80" y1="40" x2="80" y2="60" stroke="#0D1B2A" stroke-width="0.6" opacity="0.5"/>
+      <line x1="80" y1="60" x2="120" y2="60" stroke="#0D1B2A" stroke-width="0.6" opacity="0.5"/>
+
+      <line x1="140" y1="100" x2="180" y2="100" stroke="#0D1B2A" stroke-width="0.6" opacity="0.5"/>
+      <line x1="140" y1="100" x2="140" y2="140" stroke="#0D1B2A" stroke-width="0.6" opacity="0.5"/>
+      <line x1="140" y1="140" x2="180" y2="140" stroke="#0D1B2A" stroke-width="0.6" opacity="0.5"/>
+
+      <line x1="40" y1="160" x2="100" y2="160" stroke="#0D1B2A" stroke-width="0.6" opacity="0.5"/>
+      <line x1="100" y1="160" x2="100" y2="180" stroke="#0D1B2A" stroke-width="0.6" opacity="0.5"/>
+
+      <line x1="160" y1="30" x2="160" y2="80" stroke="#0D1B2A" stroke-width="0.6" opacity="0.5"/>
+      <line x1="160" y1="80" x2="190" y2="80" stroke="#0D1B2A" stroke-width="0.6" opacity="0.5"/>
+
+      <line x1="30" y1="110" x2="60" y2="110" stroke="#0D1B2A" stroke-width="0.6" opacity="0.5"/>
+      <line x1="60" y1="110" x2="60" y2="130" stroke="#0D1B2A" stroke-width="0.6" opacity="0.5"/>
+      <line x1="60" y1="130" x2="90" y2="130" stroke="#0D1B2A" stroke-width="0.6" opacity="0.5"/>
+
+      <!-- Small bend traces -->
+      <path d="M 170 170 L 170 190 L 190 190" fill="none" stroke="#0D1B2A" stroke-width="0.6" opacity="0.4"/>
+      <path d="M 10 80 L 30 80 L 30 60" fill="none" stroke="#0D1B2A" stroke-width="0.6" opacity="0.4"/>
+    </pattern>
+
+    <!-- Hex nodes at intersections -->
+    <pattern id="hexNodes" width="80" height="80" patternUnits="userSpaceOnUse">
+      <polygon points="80,38 83,40 80,42 77,40" fill="#00E5FF" opacity="0.1"/>
+      <polygon points="0,78 3,80 0,82 -3,80" fill="#00E5FF" opacity="0.08"/>
+      <polygon points="40,78 43,80 40,82 37,80" fill="#00E5FF" opacity="0.06"/>
+      <polygon points="80,0 83,2 80,4 77,2" fill="#00E5FF" opacity="0.07"/>
+    </pattern>
+
+    <!-- Larger sparse accent dots -->
+    <pattern id="accentDots" width="120" height="120" patternUnits="userSpaceOnUse">
+      <circle cx="60" cy="60" r="1.5" fill="#00E5FF" opacity="0.1"/>
+      <circle cx="0" cy="0" r="1" fill="#00E5FF" opacity="0.07"/>
+      <circle cx="120" cy="0" r="1" fill="#00E5FF" opacity="0.05"/>
+      <circle cx="0" cy="120" r="1" fill="#00E5FF" opacity="0.05"/>
+      <circle cx="120" cy="120" r="1" fill="#00E5FF" opacity="0.04"/>
+    </pattern>
+  </defs>
+
+  <!-- Background fill -->
+  <rect width="400" height="400" fill="url(#bgGrad)"/>
+
+  <!-- Grid layer -->
+  <rect width="400" height="400" fill="url(#grid)"/>
+
+  <!-- Circuit traces -->
+  <rect width="400" height="400" fill="url(#circuits)"/>
+
+  <!-- Hex nodes -->
+  <rect width="400" height="400" fill="url(#hexNodes)"/>
+
+  <!-- Accent dots -->
+  <rect width="400" height="400" fill="url(#accentDots)"/>
+</svg>
