@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 380" width="920" height="380">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 370" width="620" height="370">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#050816"/>
@@ -12,22 +12,6 @@
       <stop offset="70%" stop-color="#00E5FF" stop-opacity="0.8"/>
       <stop offset="100%" stop-color="#00E5FF" stop-opacity="0.1"/>
     </linearGradient>
-    <linearGradient id="asciiGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#00E5FF"/>
-      <stop offset="50%" stop-color="#33CCFF"/>
-      <stop offset="100%" stop-color="#009DFF"/>
-    </linearGradient>
-    <linearGradient id="barFill" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#009DFF"/>
-      <stop offset="100%" stop-color="#00E5FF"/>
-    </linearGradient>
-    <linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#00E5FF" stop-opacity="0"/>
-      <stop offset="40%" stop-color="#00E5FF" stop-opacity="0.06"/>
-      <stop offset="50%" stop-color="#00E5FF" stop-opacity="0.12"/>
-      <stop offset="60%" stop-color="#00E5FF" stop-opacity="0.06"/>
-      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
-    </linearGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="2.5" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
@@ -36,65 +20,23 @@
       <feGaussianBlur stdDeviation="1" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="heavyGlow">
-      <feGaussianBlur stdDeviation="4" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <clipPath id="termClip"><rect x="0" y="0" width="920" height="380" rx="10"/></clipPath>
+    <clipPath id="termClip"><rect x="0" y="0" width="620" height="370" rx="10"/></clipPath>
   </defs>
 
   <style>
-    @font-face { font-family: 'Mono'; }
-    .mono { font: 12px 'Courier New', Consolas, 'Liberation Mono', monospace; }
+    .mono { font: 12px 'Courier New', Consolas, monospace; }
     .mono-sm { font: 11px 'Courier New', Consolas, monospace; }
     .mono-lg { font: bold 13px 'Courier New', Consolas, monospace; }
     .sans { font: 12px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
     .sans-sm { font: 10px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-    .sans-lg { font: bold 14px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
 
     @keyframes typeLine {
       from { clip-path: inset(0 100% 0 0); opacity: 0; }
       to { clip-path: inset(0 0% 0 0); opacity: 1; }
     }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes blink {
-      0%, 49% { opacity: 1; }
-      50%, 100% { opacity: 0; }
-    }
     @keyframes scanMove {
       0% { transform: translateY(-40px); }
-      100% { transform: translateY(400px); }
-    }
-    @keyframes glowPulse {
-      0%, 100% { opacity: 0.6; }
-      50% { opacity: 1; }
-    }
-    @keyframes barFill {
-      from { width: 0; }
-    }
-    @keyframes particle1 {
-      0% { transform: translate(0, 0); opacity: 0; }
-      10% { opacity: 0.8; }
-      90% { opacity: 0.8; }
-      100% { transform: translate(80px, -60px); opacity: 0; }
-    }
-    @keyframes particle2 {
-      0% { transform: translate(0, 0); opacity: 0; }
-      10% { opacity: 0.6; }
-      90% { opacity: 0.6; }
-      100% { transform: translate(-60px, -80px); opacity: 0; }
-    }
-    @keyframes particle3 {
-      0% { transform: translate(0, 0); opacity: 0; }
-      10% { opacity: 0.7; }
-      90% { opacity: 0.7; }
-      100% { transform: translate(40px, 70px); opacity: 0; }
-    }
-    @keyframes dashMove {
-      to { stroke-dashoffset: -20; }
+      100% { transform: translateY(380px); }
     }
 
     .line { opacity: 0; }
@@ -111,233 +53,132 @@
     .l10 { animation: typeLine 0.3s steps(20,end) 3.3s forwards; }
     .l11 { animation: typeLine 0.3s steps(20,end) 3.6s forwards; }
     .l12 { animation: typeLine 0.3s steps(20,end) 3.9s forwards; }
-    .l13 { animation: typeLine 0.3s steps(20,end) 4.2s forwards; }
-    .l14 { animation: typeLine 0.3s steps(20,end) 4.5s forwards; }
-
-    .ascii-line { opacity: 0; }
-    .a0 { animation: typeLine 0.4s steps(30,end) 0.2s forwards; }
-    .a1 { animation: typeLine 0.4s steps(30,end) 0.35s forwards; }
-    .a2 { animation: typeLine 0.4s steps(30,end) 0.5s forwards; }
-    .a3 { animation: typeLine 0.4s steps(30,end) 0.65s forwards; }
-    .a4 { animation: typeLine 0.4s steps(30,end) 0.8s forwards; }
-    .a5 { animation: typeLine 0.4s steps(30,end) 0.95s forwards; }
-    .a6 { animation: typeLine 0.4s steps(30,end) 1.1s forwards; }
-    .a7 { animation: typeLine 0.4s steps(30,end) 1.25s forwards; }
-    .a8 { animation: typeLine 0.4s steps(30,end) 1.4s forwards; }
-    .a9 { animation: typeLine 0.4s steps(30,end) 1.55s forwards; }
-    .a10 { animation: typeLine 0.4s steps(30,end) 1.7s forwards; }
-    .a11 { animation: typeLine 0.4s steps(30,end) 1.85s forwards; }
-    .a12 { animation: typeLine 0.4s steps(30,end) 2.0s forwards; }
-
-    .bar-anim { animation: barFill 0.8s ease-out forwards; }
   </style>
 
-  <!-- Terminal background -->
-  <rect width="920" height="380" rx="10" fill="url(#bg)" clip-path="url(#termClip)"/>
-
-  <!-- Border -->
-  <rect x="0.5" y="0.5" width="919" height="379" rx="10" fill="none" stroke="url(#borderGlow)" stroke-width="1.5"/>
+  <!-- Background -->
+  <rect width="620" height="370" rx="10" fill="url(#bg)" clip-path="url(#termClip)"/>
+  <rect x="0.5" y="0.5" width="619" height="369" rx="10" fill="none" stroke="url(#borderGlow)" stroke-width="1.5"/>
 
   <!-- Corner accents -->
-  <path d="M 2 20 L 2 2 L 20 2" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.6" filter="url(#softGlow)"/>
-  <path d="M 900 2 L 918 2 L 918 20" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.6" filter="url(#softGlow)"/>
-  <path d="M 2 360 L 2 378 L 20 378" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.6" filter="url(#softGlow)"/>
-  <path d="M 900 378 L 918 378 L 918 360" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.6" filter="url(#softGlow)"/>
+  <path d="M 2 18 L 2 2 L 18 2" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.6" filter="url(#softGlow)"/>
+  <path d="M 602 2 L 618 2 L 618 18" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.6" filter="url(#softGlow)"/>
+  <path d="M 2 352 L 2 368 L 18 368" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.6" filter="url(#softGlow)"/>
+  <path d="M 602 368 L 618 368 L 618 352" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.6" filter="url(#softGlow)"/>
 
   <!-- Title bar -->
-  <rect x="0" y="0" width="920" height="30" rx="10" fill="#0D1117"/>
-  <rect x="0" y="20" width="920" height="10" fill="#0D1117"/>
-  <line x1="0" y1="30" x2="920" y2="30" stroke="#112240" stroke-width="0.5"/>
+  <rect x="0" y="0" width="620" height="28" rx="10" fill="#0D1117"/>
+  <rect x="0" y="18" width="620" height="10" fill="#0D1117"/>
+  <line x1="0" y1="28" x2="620" y2="28" stroke="#112240" stroke-width="0.5"/>
+  <circle cx="16" cy="14" r="5" fill="#009DFF" opacity="0.8"/>
+  <circle cx="34" cy="14" r="5" fill="#4FC3F7" opacity="0.8"/>
+  <circle cx="52" cy="14" r="5" fill="#00E5FF" opacity="0.8"/>
+  <text x="72" y="18" class="sans-sm" fill="#4FC3F7" opacity="0.5">~/profiles/omertahirustun — fastfetch</text>
 
-  <!-- Title bar dots -->
-  <circle cx="16" cy="15" r="5" fill="#009DFF" opacity="0.8">
-    <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="34" cy="15" r="5" fill="#4FC3F7" opacity="0.8">
-    <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" begin="0.5s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="52" cy="15" r="5" fill="#00E5FF" opacity="0.8">
-    <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" begin="1s" repeatCount="indefinite"/>
-  </circle>
-  <text x="72" y="19" class="sans-sm" fill="#4FC3F7" opacity="0.5">~/profiles/omertahirustun — fastfetch</text>
-
-  <!-- Scan line effect -->
-  <rect x="0" y="0" width="920" height="40" fill="url(#scanGrad)" opacity="0.8">
-    <animateTransform attributeName="transform" type="translate" from="0 -40" to="0 400" dur="5s" repeatCount="indefinite"/>
+  <!-- Scan line -->
+  <rect x="0" y="0" width="620" height="30" fill="#00E5FF" opacity="0.04">
+    <animateTransform attributeName="transform" type="translate" from="0 -30" to="0 380" dur="5s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- Static scan lines (CRT effect) -->
+  <!-- CRT scan lines -->
   <g opacity="0.03">
-    <line x1="0" y1="40" x2="920" y2="40" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="55" x2="920" y2="55" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="70" x2="920" y2="70" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="85" x2="920" y2="85" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="100" x2="920" y2="100" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="115" x2="920" y2="115" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="130" x2="920" y2="130" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="145" x2="920" y2="145" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="160" x2="920" y2="160" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="175" x2="920" y2="175" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="190" x2="920" y2="190" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="205" x2="920" y2="205" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="220" x2="920" y2="220" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="235" x2="920" y2="235" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="250" x2="920" y2="250" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="265" x2="920" y2="265" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="280" x2="920" y2="280" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="295" x2="920" y2="295" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="310" x2="920" y2="310" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="325" x2="920" y2="325" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="340" x2="920" y2="340" stroke="#00E5FF" stroke-width="1"/>
-    <line x1="0" y1="355" x2="920" y2="355" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="45" x2="620" y2="45" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="60" x2="620" y2="60" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="75" x2="620" y2="75" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="90" x2="620" y2="90" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="105" x2="620" y2="105" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="120" x2="620" y2="120" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="135" x2="620" y2="135" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="150" x2="620" y2="150" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="165" x2="620" y2="165" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="180" x2="620" y2="180" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="195" x2="620" y2="195" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="210" x2="620" y2="210" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="225" x2="620" y2="225" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="240" x2="620" y2="240" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="255" x2="620" y2="255" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="270" x2="620" y2="270" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="285" x2="620" y2="285" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="300" x2="620" y2="300" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="315" x2="620" y2="315" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="330" x2="620" y2="330" stroke="#00E5FF" stroke-width="1"/>
+    <line x1="0" y1="345" x2="620" y2="345" stroke="#00E5FF" stroke-width="1"/>
   </g>
 
-  <!-- ═══ LEFT SIDE: ASCII ART LOGO ═══ -->
-  <g filter="url(#glow)">
-    <text x="25" y="55" class="mono ascii-line a0" fill="#00E5FF">     ████████╗</text>
-    <text x="25" y="68" class="mono ascii-line a1" fill="#00E5FF">     ╚══██╔══╝</text>
-    <text x="25" y="81" class="mono ascii-line a2" fill="#009DFF">        ██║</text>
-    <text x="25" y="94" class="mono ascii-line a3" fill="#009DFF">        ██║</text>
-    <text x="25" y="107" class="mono ascii-line a4" fill="#33CCFF">        ██║</text>
-    <text x="25" y="120" class="mono ascii-line a5" fill="#33CCFF">        ██║</text>
-    <text x="25" y="133" class="mono ascii-line a6" fill="#4FC3F7">        ╚═╝</text>
-    <text x="25" y="152" class="mono ascii-line a7" fill="#009DFF" opacity="0.4">  ┌──────────────┐</text>
-    <text x="25" y="165" class="mono ascii-line a8" fill="#009DFF" opacity="0.4">  │ ▓▓▓▓▓▓▓▓▓▓▓▓ │</text>
-    <text x="25" y="178" class="mono ascii-line a9" fill="#009DFF" opacity="0.4">  │ ▓ ARCH  ▓▓▓▓ │</text>
-    <text x="25" y="191" class="mono ascii-line a10" fill="#009DFF" opacity="0.4">  │ ▓▓ LINUX ▓▓▓ │</text>
-    <text x="25" y="204" class="mono ascii-line a11" fill="#009DFF" opacity="0.4">  │ ▓▓▓▓▓▓▓▓▓▓▓▓ │</text>
-    <text x="25" y="217" class="mono ascii-line a12" fill="#009DFF" opacity="0.4">  └──────────────┘</text>
-  </g>
+  <!-- COMMAND LINE -->
+  <text x="20" y="58" class="mono-lg line l0" fill="#00E5FF" filter="url(#softGlow)">$</text>
+  <text x="35" y="58" class="mono-lg line l0" fill="#EAFBFF">fastfetch</text>
 
-  <!-- ═══ DIVIDER LINE ═══ -->
-  <line x1="195" y1="45" x2="195" y2="345" stroke="#112240" stroke-width="1" opacity="0.6"/>
-  <line x1="195" y1="45" x2="195" y2="345" stroke="#00E5FF" stroke-width="0.5" opacity="0.15" stroke-dasharray="4 8">
-    <animate attributeName="stroke-dashoffset" from="0" to="-24" dur="2s" repeatCount="indefinite"/>
-  </line>
+  <!-- SYSTEM INFO — all left-aligned -->
+  <text x="20" y="90" class="mono line l1" fill="#00E5FF">name</text>
+  <text x="80" y="90" class="mono line l1" fill="#112240">│</text>
+  <text x="95" y="90" class="mono-lg line l1" fill="#EAFBFF" filter="url(#softGlow)">Ömer Tahir Üstün</text>
 
-  <!-- ═══ RIGHT SIDE: COMMAND ═══ -->
-  <text x="215" y="60" class="mono-lg line l0" fill="#00E5FF" filter="url(#softGlow)">$</text>
-  <text x="230" y="60" class="mono-lg line l0" fill="#EAFBFF">fastfetch</text>
+  <text x="20" y="110" class="mono line l2" fill="#00E5FF">role</text>
+  <text x="80" y="110" class="mono line l2" fill="#112240">│</text>
+  <text x="95" y="110" class="mono line l2" fill="#4FC3F7">Software Engineer</text>
 
-  <!-- ═══ RIGHT SIDE: SYSTEM INFO ═══ -->
-  <!-- Name -->
-  <text x="215" y="90" class="mono line l1" fill="#00E5FF">name</text>
-  <text x="280" y="90" class="mono line l1" fill="#112240">│</text>
-  <text x="295" y="90" class="mono-lg line l1" fill="#EAFBFF" filter="url(#softGlow)">Ömer Tahir Üstün</text>
+  <text x="20" y="130" class="mono line l3" fill="#00E5FF">title</text>
+  <text x="80" y="130" class="mono line l3" fill="#112240">│</text>
+  <text x="95" y="130" class="mono line l3" fill="#EAFBFF">Mobile Developer · Full Stack Developer</text>
 
-  <!-- Role -->
-  <text x="215" y="110" class="mono line l2" fill="#00E5FF">role</text>
-  <text x="280" y="110" class="mono line l2" fill="#112240">│</text>
-  <text x="295" y="110" class="mono line l2" fill="#4FC3F7">Software Engineer</text>
+  <text x="20" y="150" class="mono line l4" fill="#00E5FF">uni</text>
+  <text x="80" y="150" class="mono line l4" fill="#112240">│</text>
+  <text x="95" y="150" class="mono line l4" fill="#4FC3F7">Istanbul Sabahattin Zaim Üniversitesi</text>
 
-  <!-- Title -->
-  <text x="215" y="128" class="mono line l3" fill="#00E5FF">title</text>
-  <text x="280" y="128" class="mono line l3" fill="#112240">│</text>
-  <text x="295" y="128" class="mono line l3" fill="#EAFBFF">Mobile Developer · Full Stack Developer</text>
-
-  <!-- University -->
-  <text x="215" y="146" class="mono line l4" fill="#00E5FF">uni</text>
-  <text x="280" y="146" class="mono line l4" fill="#112240">│</text>
-  <text x="295" y="146" class="mono line l4" fill="#4FC3F7">Istanbul Sabahattin Zaim Üniversitesi</text>
-
-  <!-- Major -->
-  <text x="215" y="164" class="mono line l5" fill="#00E5FF">major</text>
-  <text x="280" y="164" class="mono line l5" fill="#112240">│</text>
-  <text x="295" y="164" class="mono line l5" fill="#EAFBFF">Software Engineering</text>
+  <text x="20" y="170" class="mono line l5" fill="#00E5FF">major</text>
+  <text x="80" y="170" class="mono line l5" fill="#112240">│</text>
+  <text x="95" y="170" class="mono line l5" fill="#EAFBFF">Software Engineering</text>
 
   <!-- Separator -->
-  <line x1="215" y1="178" x2="895" y2="178" stroke="#112240" stroke-width="0.5" opacity="0.4" class="line l6"/>
+  <line x1="20" y1="185" x2="600" y2="185" stroke="#112240" stroke-width="0.5" opacity="0.4" class="line l5"/>
 
-  <!-- OS -->
-  <text x="215" y="198" class="mono line l7" fill="#00E5FF">os</text>
-  <text x="280" y="198" class="mono line l7" fill="#112240">│</text>
-  <text x="295" y="198" class="mono line l7" fill="#EAFBFF">Arch Linux x86_64</text>
+  <text x="20" y="205" class="mono line l6" fill="#00E5FF">os</text>
+  <text x="80" y="205" class="mono line l6" fill="#112240">│</text>
+  <text x="95" y="205" class="mono line l6" fill="#EAFBFF">Arch Linux x86_64</text>
 
-  <!-- Kernel -->
-  <text x="215" y="216" class="mono line l8" fill="#00E5FF">kernel</text>
-  <text x="280" y="216" class="mono line l8" fill="#112240">│</text>
-  <text x="295" y="216" class="mono line l8" fill="#EAFBFF">6.x.x-zen1-1-zen</text>
+  <text x="20" y="225" class="mono line l7" fill="#00E5FF">kernel</text>
+  <text x="80" y="225" class="mono line l7" fill="#112240">│</text>
+  <text x="95" y="225" class="mono line l7" fill="#EAFBFF">6.x.x-zen1-1-zen</text>
 
-  <!-- Shell -->
-  <text x="215" y="234" class="mono line l9" fill="#00E5FF">shell</text>
-  <text x="280" y="234" class="mono line l9" fill="#112240">│</text>
-  <text x="295" y="234" class="mono line l9" fill="#EAFBFF">zsh 5.9</text>
+  <text x="20" y="245" class="mono line l8" fill="#00E5FF">shell</text>
+  <text x="80" y="245" class="mono line l8" fill="#112240">│</text>
+  <text x="95" y="245" class="mono line l8" fill="#EAFBFF">zsh 5.9</text>
 
-  <!-- Editor -->
-  <text x="215" y="252" class="mono line l10" fill="#00E5FF">editor</text>
-  <text x="280" y="252" class="mono line l10" fill="#112240">│</text>
-  <text x="295" y="252" class="mono line l10" fill="#EAFBFF">Neovim 0.10+</text>
+  <text x="20" y="265" class="mono line l9" fill="#00E5FF">editor</text>
+  <text x="80" y="265" class="mono line l9" fill="#112240">│</text>
+  <text x="95" y="265" class="mono line l9" fill="#EAFBFF">Neovim 0.10+</text>
 
-  <!-- IDE -->
-  <text x="215" y="270" class="mono line l11" fill="#00E5FF">ide</text>
-  <text x="280" y="270" class="mono line l11" fill="#112240">│</text>
-  <text x="295" y="270" class="mono line l11" fill="#EAFBFF">JetBrains Rider · VS Code</text>
+  <text x="20" y="285" class="mono line l10" fill="#00E5FF">ide</text>
+  <text x="80" y="285" class="mono line l10" fill="#112240">│</text>
+  <text x="95" y="285" class="mono line l10" fill="#EAFBFF">JetBrains Rider · VS Code</text>
 
   <!-- Separator -->
-  <line x1="215" y1="282" x2="895" y2="282" stroke="#112240" stroke-width="0.5" opacity="0.4" class="line l12"/>
+  <line x1="20" y1="298" x2="600" y2="298" stroke="#112240" stroke-width="0.5" opacity="0.4" class="line l10"/>
 
-  <!-- Languages with bars -->
-  <text x="215" y="302" class="mono line l12" fill="#00E5FF">lang</text>
-  <text x="280" y="302" class="mono line l12" fill="#112240">│</text>
-  <text x="295" y="302" class="mono-sm line l12" fill="#EAFBFF">C#</text>
-  <rect x="315" y="294" width="160" height="8" rx="2" fill="#112240" class="line l12"/>
-  <rect x="315" y="294" width="136" height="8" rx="2" fill="url(#barFill)" class="line l12" opacity="0.9"/>
-  <text x="485" y="302" class="mono-sm line l12" fill="#4FC3F7">85%</text>
+  <text x="20" y="318" class="mono line l11" fill="#00E5FF">back</text>
+  <text x="80" y="318" class="mono line l11" fill="#112240">│</text>
+  <text x="95" y="318" class="mono-sm line l11" fill="#EAFBFF">ASP.NET Core · MongoDB · Redis · Kafka</text>
 
-  <text x="295" y="318" class="mono-sm line l13" fill="#EAFBFF">Java</text>
-  <rect x="315" y="310" width="160" height="8" rx="2" fill="#112240" class="line l13"/>
-  <rect x="315" y="310" width="112" height="8" rx="2" fill="url(#barFill)" class="line l13" opacity="0.8"/>
-  <text x="485" y="318" class="mono-sm line l13" fill="#4FC3F7">70%</text>
+  <text x="20" y="338" class="mono line l12" fill="#00E5FF">front</text>
+  <text x="80" y="338" class="mono line l12" fill="#112240">│</text>
+  <text x="95" y="338" class="mono-sm line l12" fill="#EAFBFF">React Native</text>
 
-  <text x="295" y="334" class="mono-sm line l14" fill="#EAFBFF">Kotlin</text>
-  <rect x="315" y="326" width="160" height="8" rx="2" fill="#112240" class="line l14"/>
-  <rect x="315" y="326" width="96" height="8" rx="2" fill="url(#barFill)" class="line l14" opacity="0.7"/>
-  <text x="485" y="334" class="mono-sm line l14" fill="#4FC3F7">60%</text>
-
-  <!-- Backend / Frontend -->
-  <text x="530" y="302" class="mono line l12" fill="#00E5FF">back</text>
-  <text x="590" y="302" class="mono line l12" fill="#112240">│</text>
-  <text x="605" y="302" class="mono-sm line l12" fill="#EAFBFF">ASP.NET Core · MongoDB</text>
-
-  <text x="530" y="318" class="mono line l13" fill="#00E5FF">     </text>
-  <text x="605" y="318" class="mono-sm line l13" fill="#4FC3F7">Redis · Kafka</text>
-
-  <text x="530" y="334" class="mono line l14" fill="#00E5FF">front</text>
-  <text x="590" y="334" class="mono line l14" fill="#112240">│</text>
-  <text x="605" y="334" class="mono-sm line l14" fill="#EAFBFF">React Native</text>
-
-  <!-- GitHub -->
-  <text x="690" y="302" class="mono line l12" fill="#00E5FF">gh</text>
-  <text x="730" y="302" class="mono line l12" fill="#112240">│</text>
-  <text x="745" y="302" class="mono-sm line l12" fill="#EAFBFF">@omertahirustun</text>
-
-  <!-- ═══ BOTTOM MOTTO ═══ -->
-  <text x="460" y="365" class="sans-lg" fill="#00E5FF" text-anchor="middle" opacity="0" filter="url(#glow)">
+  <!-- BOTTOM MOTTO -->
+  <text x="310" y="362" class="sans" fill="#00E5FF" text-anchor="middle" opacity="0" filter="url(#glow)">
     ▸ Build. Learn. Repeat.
-    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="4.8s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="4.2s" fill="freeze"/>
   </text>
-  <rect x="658" y="353" width="2" height="16" fill="#00E5FF" opacity="0">
-    <animate attributeName="opacity" values="1;0;1" dur="1s" begin="5.3s" repeatCount="indefinite"/>
+  <rect x="488" y="351" width="2" height="14" fill="#00E5FF" opacity="0">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" begin="4.7s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- ═══ FLOATING PARTICLES ═══ -->
-  <circle cx="880" cy="60" r="1.5" fill="#00E5FF" opacity="0">
-    <animate attributeName="opacity" values="0;0.7;0" dur="4s" begin="1s" repeatCount="indefinite"/>
-    <animateTransform attributeName="transform" type="translate" values="0,0; 30,-40; 60,-20" dur="4s" begin="1s" repeatCount="indefinite"/>
+  <!-- Floating particles -->
+  <circle cx="590" cy="50" r="1.2" fill="#00E5FF" opacity="0">
+    <animate attributeName="opacity" values="0;0.6;0" dur="4s" begin="1s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; 15,-30" dur="4s" begin="1s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="850" cy="340" r="1" fill="#4FC3F7" opacity="0">
-    <animate attributeName="opacity" values="0;0.5;0" dur="5s" begin="2s" repeatCount="indefinite"/>
-    <animateTransform attributeName="transform" type="translate" values="0,0; -40,-30; -20,-60" dur="5s" begin="2s" repeatCount="indefinite"/>
+  <circle cx="580" cy="340" r="0.8" fill="#4FC3F7" opacity="0">
+    <animate attributeName="opacity" values="0;0.4;0" dur="5s" begin="2s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0; -20,-40" dur="5s" begin="2s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="200" cy="350" r="1.2" fill="#009DFF" opacity="0">
-    <animate attributeName="opacity" values="0;0.6;0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
-    <animateTransform attributeName="transform" type="translate" values="0,0; 20,-50; 50,-30" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
-  </circle>
-  <circle cx="700" cy="50" r="0.8" fill="#33CCFF" opacity="0">
-    <animate attributeName="opacity" values="0;0.4;0" dur="6s" begin="3s" repeatCount="indefinite"/>
-    <animateTransform attributeName="transform" type="translate" values="0,0; -20,30; 10,60" dur="6s" begin="3s" repeatCount="indefinite"/>
-  </circle>
-
-  <!-- Bottom decorative line -->
-  <line x1="215" y1="345" x2="895" y2="345" stroke="#00E5FF" stroke-width="0.3" opacity="0.2"/>
 </svg>
